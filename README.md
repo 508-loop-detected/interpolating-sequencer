@@ -9,3 +9,7 @@ The source of randomness is analog noise. The "random bits" board produces noise
 The random bits control the interpolated steps, and are stored in a set of flip-flops. There's a "lock" knob, borrowed shamelessly from Tom Whitwell's Turing Machine, which allows you to lock in a sequence that you're enjoying. 
 
 This module, like many of my modules, uses 2mm-pitch male/female headers. Be sure you order/use the right thing!
+
+There are three trimmers -- two on the main board, and one on the random bits board. The two on the main board set the 1v and .583333v offset voltage sources. There are spots on the board near the trimmers labeled with those voltages which you can poke with your voltmeter.
+
+The trimmer on the random bits board sets the amplitude of the noise source, which in turn affects the distribution of random voltages output by the sample and holds. I usually let the module warm up for 10 minutes, apply a clock to the clock input, & then adjust it so that the random voltages present on header H3 seem evenly distributed between 0 and 5 volts. Or you can set all of the step pots to zero, set the 5th/oct pot full over, set hi/lo to the midpoint, and then watch the output & adjust the trimmer until you're getting roughly equal numbers of highs and lows on the even steps.
